@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!----Link CSS- <link rel="stylesheet" type="text/css" href="./css/style.css">----->
+  <title>about.hbs</title>
+</head>
+
+<body>
+  <h1>Name of the Course is {{course}} </h1>
+  <h2>Mr {{instructor}} is the instructor of {{course}} course</h2>
+</body>
+
+</html>

@@ -1,0 +1,118 @@
+console.log('Client side Script has been loaded')
+/*
+fetch('http://puzzle.mead.io/puzzle').then((response)=>{
+      response.json().then((data)=>{
+           //console.log(data)
+      })
+
+})
+*/
+
+/*----------------------------------Excellent Code By Nishant---------------------------------------------------------*/
+
+/*
+const url='https://api.mapbox.com/geocoding/v5/mapbox.places/' +encodeURIComponent('boston') + '.json?access_token=pk.eyJ1IjoibmlzaGFudHNoYXJtYTc4MzAwNyIsImEiOiJja2w5MjF3OWgwbGd1MnZwczVuMG54MzY4In0.dBLrLq3nBdjEjIH7RupJHw&limit=1'
+
+//------------------------------------Fetch the Geocode data--------------------------------------------------------------
+
+fetch(url).then((response)=>{
+     response.json().then((data)=>{
+     
+            const latitude=data.features[0].center[1]
+            const longitude=data.features[0].center[0]
+            const place=data.features[0].place_name
+            
+//-------------------------------------Fetch the Forecast data------------------------------------------------------------ 
+
+            const forecastUrl='http://api.weatherstack.com/current?access_key=3a9dcebf760f277e143a21f978010dc8&query='+ latitude+ ','+longitude+'&units=m'
+            
+            fetch(forecastUrl).then((response)=>{
+                 response.json().then((forecastData)=>{ 
+                       let str=''
+                       str+=forecastData.current.weather_descriptions[0]+'. It is currently '+forecastData.current.temperature +' degrees out. ' + 'It feels like ' +forecastData.current.feelslike+' degrees. There is a '+forecastData.current.precip+'% chances of rain'
+                       console.log('Forecast: '+str)
+                       console.log('Location: '+place)
+                       
+                 })
+            })
+            
+           
+      })
+})
+
+-----------------------------------Excellent code by nishant----------------------------------------------------------------*/
+
+/*--------------------------------------pretty Dope Method----------------------------------------------------------------*/
+
+let weatherForm=document.querySelector('form')
+let search=document.querySelector('input')
+let message1=document.querySelector('#message1')
+let message2=document.querySelector('#message2')
+weatherForm.addEventListener('submit',(e)=>{
+     e.preventDefault()
+     message1.textContent='Loading....'
+     const location=search.value
+     fetch('http://localhost:3000/weather?address=' + location).then((response)=>{
+      response.json().then((data)=>{
+           if(data.error){
+               // console.log(data.error)
+               message1.textContent=data.error
+           }
+           else
+           {
+               // console.log(data.location)
+               // console.log(data.forecast)
+                message1.textContent= data.location
+                message2.textContent= data.forecast
+           }
+      })
+
+})
+     
+})
+
+/*
+fetch('http://localhost:3000/weather?address=paris').then((response)=>{
+      response.json().then((data)=>{
+           if(data.error){
+                console.log(data.error)
+           }
+           else
+           {
+                console.log(data.location)
+                console.log(data.forecast)
+           }
+      })
+
+})
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

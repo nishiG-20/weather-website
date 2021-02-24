@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!----Link CSS- <link rel="stylesheet" type="text/css" href="./css/style.css">----->
+  <title>about.hbs</title>
+</head>
+
+<body>
+  <h1> According to {{name}}.jiska koi nahi hota uska {{kya}} hota hai </h1>
+  <h2> According to resarch {{name}} is the upcoming champion of world
+</body>
+
+</html>
