@@ -34,9 +34,8 @@ app.get('', (req, res) => {
 
 app.get('/about', (req, res) => {
      res.render('about',{
-         title:'About Section',
-         course:'Node js',
-         instructor:'Andrew Mead'
+         application:'Real Time Weather Tracking',
+         owner:'Mr Nishant Sharma'
      })
 })
 
